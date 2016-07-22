@@ -1,0 +1,24 @@
+db:
+  image: postgres
+  ports:
+    - '5432'
+  volumes_from:
+    - data
+
+web:
+  build: .
+  ports:
+    - 3000:3000
+  volumes:
+    - .:/var/app
+  command: rails s -b '0.0.0.0'
+  links:
+    - db
+  environment:
+    DB_USER: postgres
+
+data:
+  image: cogniteev/echo
+  command: echo 'Data Container for PostgreSQL'
+  volumes:
+    - ./tmp/postgres_data:/var/lib/postgresql/data
