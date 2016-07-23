@@ -21,9 +21,11 @@
     </div>
   </header>
   <div class="container master-container">
-    <ul class="breadcrumb">
-      <%= yield :breadcrumb %>
-    </ul>
+    <% if content_for?(:breadcumbs) %>
+      <ul class="breadcrumb">
+        <%= yield :breadcrumb %>
+      </ul>
+    <% end %>
 
     <% if notice %>
       <div class="alert alert-success fade in" data-alert="alert">
