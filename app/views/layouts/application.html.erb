@@ -17,7 +17,28 @@
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", root_path %></li>
         </ul>
+
+        <% if user_signed_in? %>
+          <div id="navbar-options">
+            <div class="navbar-form navbar-right">
+              <div class="btn-group user-dropdown">
+                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                  <div id="my-account-button" class="ellipsis">
+                    <%= current_user.email %>
+                    <span class="caret"></span>
+                  </div>
+                </button>
+                <ul class="dropdown-menu user-accounts">
+                  <li><a href="#">Profile</a></li>
+                  <li>
+                    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        <% end %>
       </div>
+
     </div>
   </header>
   <div class="container master-container">
