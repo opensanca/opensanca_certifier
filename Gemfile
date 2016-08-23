@@ -17,6 +17,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-byebug'
