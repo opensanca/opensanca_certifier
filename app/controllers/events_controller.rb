@@ -18,6 +18,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def solicit
+  end
+
   private
 
   def event_params

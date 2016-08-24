@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'events/new'
-
   devise_for :users
 
-  resources :events, only: [ :new, :create, :show ]
+  resources :events, only: [ :new, :create, :show ] do
+    get '/request', action: :solicit
+  end
+
   root to: 'pages#home'
 end
