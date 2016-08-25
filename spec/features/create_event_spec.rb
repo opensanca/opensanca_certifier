@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature 'Create Event', type: :feature do
+  before :each do
+    user = FactoryGirl.create(:user)
+    login_as(user, scope: :user, run_callbacks: false)
+  end
+
   scenario 'User creates a event' do
     visit '/events/new'
 

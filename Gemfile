@@ -18,6 +18,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'faker'
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-byebug'
