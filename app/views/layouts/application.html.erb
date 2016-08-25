@@ -16,6 +16,7 @@
         </div>
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Events", events_path %></li>
         </ul>
 
         <% if user_signed_in? %>
@@ -24,7 +25,7 @@
               <div class="btn-group user-dropdown">
                 <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
                   <div id="my-account-button" class="ellipsis">
-                    <%= current_user.email %>
+                    <%= current_user.name %>
                     <span class="caret"></span>
                   </div>
                 </button>
