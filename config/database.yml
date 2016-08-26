@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: opensanca_certifier_production
-  username: opensanca_certifier
+  database: <%= ENV['OPENSANCA_CERTIFIER_DATABASE_NAME'] %>
+  username: <%= ENV['OPENSANCA_CERTIFIER_DATABASE_USERNAME'] %>
   password: <%= ENV['OPENSANCA_CERTIFIER_DATABASE_PASSWORD'] %>
