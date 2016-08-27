@@ -1,5 +1,7 @@
 # README
 
+[![Join the chat at https://gitter.im/opensanca_certifier/Lobby](https://badges.gitter.im/opensanca_certifier/Lobby.svg)](https://gitter.im/opensanca_certifier/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
