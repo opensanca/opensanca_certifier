@@ -7,7 +7,7 @@ RSpec.feature 'Create Event', type: :feature do
   end
 
   scenario 'User creates a event' do
-    visit '/events/new'
+    visit '/admin/events/new'
 
     fill_in 'Title',      with: 'My new Event'
     fill_in 'Meetup url', with: 'http://www.meetup.com/pt-BR/opensanca/events/231944281/'

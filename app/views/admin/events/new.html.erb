@@ -1,6 +1,6 @@
 <h1>Create the Event</h1>
 
-<%= simple_form_for @event do |form| %>
+<%= simple_form_for [:admin, @event] do |form| %>
   <%= form.input :title %>
   <%= form.input :meetup_url %>
   <%= form.button :submit %>
