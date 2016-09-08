@@ -1,0 +1,9 @@
+<%= simple_form_for(@user, url: finish_user_signup_path('user')) do |f| %>
+  <div class="field">
+    <%= f.input :name, autofocus: true %>
+    <%= f.input :email %>
+    <%= f.input :document %>
+
+    <%= f.submit %>
+  </div>
+<% end %>

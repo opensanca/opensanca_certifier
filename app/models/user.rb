@@ -4,11 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  validates :document, presence: true, if: ->(object) { object.provider.blank? }
+  validates :document, presence: true, unless: :new_record?
   validates :name,     presence: true
 
   def email_required?
-    super && provider.blank?
+    super && !new_record?
   end
 
   def self.from_omniauth(auth)
