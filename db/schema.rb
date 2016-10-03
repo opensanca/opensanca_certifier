@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907183832) do
+ActiveRecord::Schema.define(version: 20160912031732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "certificates", force: :cascade do |t|
+    t.integer "enrollment_id"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.boolean "attended"
+    t.integer "user_id"
+    t.integer "event_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -40,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160907183832) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name",                                null: false
-    t.string   "document"
+    t.string   "document",                            null: false
     t.string   "provider"
     t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
