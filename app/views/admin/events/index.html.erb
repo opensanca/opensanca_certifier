@@ -1,0 +1,32 @@
+<h1>
+  Event list
+  <a href="events/new" class="btn btn-primary active" role="button" style="float: right;">New</a>
+</h1>
+
+
+
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Meetup</th>
+    <th>URL</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td>
+          <%= link_to event.meetup_url, event.meetup_url, target: '_blank' %>
+        </td>
+        <td>
+          <%= link_to "events/edit/#{event.id}" do %>
+              <span class="glyphicon glyphicon-pencil" title="Edit `<%=event.title%>`"></span>
+          <% end %>
+          <%= link_to "events/#{event.id}" do %>
+              <span class="glyphicon glyphicon-file" title="View `<%=event.title%>`"></span>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>

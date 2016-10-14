@@ -19,10 +19,17 @@ module Admin
       @event = Event.find(params[:id])
     end
 
+
+    def index
+      @events = Event.all
+
+    end
+
     private
 
     def event_params
       params.require(:event).permit(:title, :meetup_url)
     end
+
   end
 end
