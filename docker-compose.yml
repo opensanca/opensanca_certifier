@@ -4,6 +4,8 @@ db:
     - '5432'
   volumes_from:
     - data
+redis:
+  image: redis
 
 web:
   build: .
