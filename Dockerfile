@@ -1,6 +1,8 @@
 FROM ruby:2.3
 MAINTAINER mail@carlosribeiro.me
 
+ENV BUNDLE_PATH /gems
+
 RUN apt-get update && apt-get install -y \
   build-essential \
   ghostscript \

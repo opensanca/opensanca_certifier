@@ -13,12 +13,35 @@ web:
     - 3000:3000
   volumes:
     - .:/var/app
+  volumes_from:
+    - gems
   command: rails s -b '0.0.0.0'
   links:
     - db
+    - redis
   environment:
     DB_USER: postgres
+    REDIS_URL: redis://redis:6379
 
+job:
+  build: .
+  volumes:
+    - .:/var/app
+  volumes_from:
+    - gems
+  command: sidekiq -C config/sidekiq.yml
+  links:
+    - db
+    - redis
+  environment:
+    DB_USER: postgres
+    REDIS_URL: redis://redis:6379
+
+gems:
+  image: busybox
+  log_driver: 'none'
+  volumes:
+    - /gems
 data:
   image: cogniteev/echo
   command: echo 'Data Container for PostgreSQL'
