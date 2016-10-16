@@ -21,5 +21,6 @@ Dotenv::Railtie.load unless Rails.env.production?
 module OpensancaCertifier
   class Application < Rails::Application
     config.autoload_paths << Rails.root.join('lib')
+    config.active_job.queue_adapter = :sidekiq
   end
 end
