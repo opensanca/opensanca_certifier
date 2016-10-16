@@ -1,7 +1,7 @@
-class ExampleJob < ApplicationJob
-  queue_as :default
+class ExampleJob
+  include Sidekiq::Worker
 
-  def perform(*args)
+  def perform
     Rails.logger.info 'OpensancaCertifier'
   end
 end
