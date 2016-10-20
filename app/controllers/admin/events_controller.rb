@@ -8,8 +8,7 @@ module Admin
       @event = Event.new(event_params)
 
       if @event.save
-        flash[:notice] = 'Event was successfully created.'
-        redirect_to [:admin, @event]
+        redirect_to [:admin, @event], notice: t('.notice')
       else
         render :new
       end

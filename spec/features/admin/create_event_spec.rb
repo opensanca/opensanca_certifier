@@ -9,20 +9,20 @@ RSpec.feature 'Create Event', type: :feature do
   scenario 'User creates a event' do
     visit '/admin/events/new'
 
-    fill_in 'Title',      with: 'My new Event'
-    fill_in 'Meetup url', with: 'http://www.meetup.com/pt-BR/opensanca/events/231944281/'
-    click_button 'Create Event'
+    fill_in 'Título',        with: 'My new Event'
+    fill_in 'URL do Meetup', with: 'http://www.meetup.com/pt-BR/opensanca/events/231944281/'
+    click_button 'Criar Evento'
 
-    expect(page).to have_text('Event was successfully created.')
+    expect(page).to have_text('Evento criado com sucesso.')
   end
 
   scenario 'With invalid parameters' do
     visit '/admin/events/new'
 
-    fill_in 'Title',      with: ''
-    fill_in 'Meetup url', with: ''
-    click_button 'Create Event'
+    fill_in 'Título',        with: ''
+    fill_in 'URL do Meetup', with: ''
+    click_button 'Criar Evento'
 
-    expect(page).not_to have_text('Event was successfully created.')
+    expect(page).not_to have_text('Evento criado com sucesso.')
   end
 end
