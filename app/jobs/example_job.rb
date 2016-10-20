@@ -3,6 +3,5 @@ class ExampleJob < ActiveJob::Base
 
   def perform(*args)
     Rails.logger.info 'OpensancaCertifier'
-    raise 'a'
   end
 end

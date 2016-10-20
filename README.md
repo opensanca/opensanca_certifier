@@ -18,10 +18,15 @@ docker-compose up
 
 ## Setup
 
-Run
+Run in the machine:
 ```
 bin/setup
 ```
+or with docker:
+```
+docker-compose run web bin/setup
+```
+
 to make the database creation, database migration and the database initialization. It will crate a file called `.env`
 
 This will generate a sample user:
