@@ -1,0 +1,5 @@
+pt-BR:
+  devise:
+    shared:
+      links:
+        oauth_link: 'Fazer login com %{provider}'
