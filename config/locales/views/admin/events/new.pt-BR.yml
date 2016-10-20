@@ -1,0 +1,5 @@
+pt-BR:
+  admin:
+    events:
+      new:
+        new_event_title: 'Criar novo Evento'

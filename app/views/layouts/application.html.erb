@@ -16,7 +16,7 @@
         </div>
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Events", admin_events_path %></li>
+          <li><%= link_to t('.menu.events'), admin_events_path %></li>
         </ul>
 
         <% if user_signed_in? %>
@@ -30,9 +30,8 @@
                   </div>
                 </button>
                 <ul class="dropdown-menu user-accounts">
-                  <li><a href="#">Profile</a></li>
                   <li>
-                    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                    <%= link_to(t('.menu.logout'), destroy_user_session_path, method: :delete) %>
                   </li>
                 </ul>
               </div>
