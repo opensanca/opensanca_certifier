@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      event:
+        one: 'Evento'
+        other: 'Eventos'
+
+    attributes:
+      event:
+        title: 'Título'
+        meetup_url: 'URL do Meetup'

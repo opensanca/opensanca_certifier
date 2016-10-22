@@ -1,0 +1,6 @@
+pt-BR:
+  layouts:
+    application:
+      menu:
+        events: 'Eventos'
+        logout: 'Logout'
