@@ -27,7 +27,26 @@ or with docker:
 docker-compose run web bin/setup
 ```
 
+### Local running
+```
+sudo apt-get install libpq-dev
+
+bundle install
+
+docker run --name postgres -e POSTGRES_USER=postgres -d -p 5432:5432 postgres
+
+docker run --name redis -p 6379:6379 -d redis
+
+rails s
+```
+
 to make the database creation, database migration and the database initialization. It will create a file called `.env`
+
+.env file
+```
+DB_USER=postgres
+REDIS_URL=127.0.0.1:6379
+```
 
 
 This will generate a sample user:
