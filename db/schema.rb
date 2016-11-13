@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912031732) do
+ActiveRecord::Schema.define(version: 20161113115020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,4 +59,7 @@ ActiveRecord::Schema.define(version: 20160912031732) do
     t.index ["uid"], name: "index_users_on_uid", using: :btree
   end
 
+  add_foreign_key "certificates", "enrollments"
+  add_foreign_key "enrollments", "events"
+  add_foreign_key "enrollments", "users"
 end
